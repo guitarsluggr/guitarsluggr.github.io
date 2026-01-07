@@ -3,13 +3,13 @@ layout: default
 title: MH Wilds Linux Guide
 ---
 
-<h1 style="font-family:Helvetica Neue"> Monster Hunter Wilds on Linux Guide </h1>
+<h1 style="font-family:Helvetica Neue"> Monster Hunter Wilds on Linux Guide (Linux Mint)</h1>
 
 <p class="paragraph1">
 <div class="para_indent">
 <ul class="list">
     <li class="list-item">Preface &amp; Recommended Specs</li>
-    <li class="list-item">Install Linux</li>
+    <li class="list-item">Install Linux &amp; GPU Driver</li>
     <li class="list-item">Install Monster Hunter Wilds</li>
     <li class="list-item">ReFramework</li>
     <li class="list-item">ReShade</li>
@@ -21,11 +21,11 @@ title: MH Wilds Linux Guide
 <h1 style="font-family:Helvetica Neue"> Preface &amp; Recommended Specs </h1>
 
 <p class="paragraph1">
-Off the bat, I would <b>NOT</b> recommend doing this unless you have an explicit reason to switch to linux. This does not significantly change performance in a meaningful way.
+Off the bat, I would <b>NOT</b> recommend doing this unless you have an explicit reason to switch to Linux. This does not significantly change performance in a meaningful way.
 </p>
 
 <p class="paragraph1">
-If you do want to do this, I highly recommend installing linux on a new and separate hard drive. Partitioning part of an existing hard drive that has Windows installed on it is asking for a Windows update to corrupt or even completely wipe your Linux OS partition.
+If you do want to do this, I highly recommend installing Linux on a <b><u>new and separate hard drive</b></u>. Partitioning part of an existing hard drive that has Windows installed on it is asking for a Windows update to corrupt or even completely wipe your Linux OS partition.
 </p>
 
 <p class="paragraph1">
@@ -40,10 +40,15 @@ Doing this in linux means you are relying on graphics card support in linux, thu
 </p>
 
 <p class="paragraph1">
-The graphical issues you could face if you do not meet these specs could be exasperated because of the Linux environment.
+The graphical issues you could face if you do not meet these specs could be exascerbated because of the Linux environment.
 </p>
 
-<h1 style="font-family:Helvetica Neue"> Installing Linux </h1>
+<!--
+
+INSTALLING LINUX
+
+ -->
+<h1 style="font-family:Helvetica Neue"> Installing Linux &amp; GPU Driver</h1>
 
 <p class="paragraph1">
 Before getting started, you should do some investigating to see which linux distribution works for you.
@@ -53,10 +58,239 @@ Before getting started, you should do some investigating to see which linux dist
 I lightly recommend either Bazzite (if you do not have much experience with Linux or programming in general) or Mint (if you have at least some experience with Linux and programming).
 </p>
 
+<br/>
+
+<h1 style="font-family:Helvetica Neue"> Linux Setup </h1>
+
+<p class="paragraph1">
+Download link:<br/>
+<a href="https://www.linuxmint.com/download.php" target="_blank">https://www.linuxmint.com/download.php</a>
+<br/><br/>
+
+Official Guide:<br/>
+<a href="https://linuxmint-installation-guide.readthedocs.io/en/latest/" target="_blank">https://linuxmint-installation-guide.readthedocs.io/en/latest/</a>
+<br/><br/>
+
+Quick guide:<br/>
+
+<a href="https://www.youtube.com/shorts/PHaRn9s-AN0" target="_blank">https://www.youtube.com/shorts/PHaRn9s-AN0</a>
+<br/><br/>
+
+Longer guide:<br/>
+
+<a href="https://www.youtube.com/watch?v=PZZz790YnzU" target="_blank">https://www.youtube.com/watch?v=PZZz790YnzU</a>
+<br/><br/>
+
+</p>
+
+</br>
+
+<p class="paragraph1">
+The main way to install is through the <u>Driver Manager</u>.
+
+</br>
+Here is a full guide, including multiple installation methods, in case there are issues with the Driver Manager.
+<a href="https://linuxcapable.com/install-nvidia-drivers-on-linux-mint/" target="_blank">https://linuxcapable.com/install-nvidia-drivers-on-linux-mint/</a>
+</p>
+
+
+<br/><br/>
+
+<!--
+
+INSTALLING MH WILDS
+
+ -->
+
+<h1 style="font-family:Helvetica Neue"> Install Monster Hunter Wilds</h1>
+
+<br/><br/>
+
+<p class="paragraph1">
+This part is easy.
+
+<div class="para_indent">
+<ul class="list">
+    <li class="list-item">Install Steam, through the Software Manager</li>
+    <li class="list-item">Let Proton install (Can do experimental or most recent version)</li>
+    <li class="list-item">Install Monster Hunter Wilds</li>
+    <li class="list-item">Compile Vulkan Shaders</li>
+</ul>
+</div>
+</p>
+
+<br/><br/>
+
+<!--
+
+ReFramework
+
+ -->
+
+<h1 style="font-family:Helvetica Neue"> ReFramework </h1>
+
+<br/><br/>
+
+<p class="paragraph1">
+Download ReFramework from one of the following two locations:<br/>
+Nexus: <a href="https://www.nexusmods.com/monsterhunterwilds/mods/93?tab=files" target="_blank">https://www.nexusmods.com/monsterhunterwilds/mods/93?tab=files</a><br/>
+Github: <a href="https://github.com/praydog/REFramework-nightly/releases/" target="_blank">https://github.com/praydog/REFramework-nightly/releases/</a>
+</p>
+
+<p class="paragraph1">
+Next, drop the "dinput8.dll" file into your MH Wilds installation folder. Can find this by right clicking on MH Wilds in your steam library, and going to "Browse Local Files...".
+</p>
+
+<p class="paragraph1">
+Next, drop the "dinput8.dll" file into your MH Wilds installation folder. Can find this by right clicking on MH Wilds in your steam library, and going to "Browse Local Files...".
+</p>
+
+<p class="paragraph1">
+Lastly, depending on if you want to also include ReShade, copy one of the following Launch Options. You will paste it into:<br/>
+Steam > MH Wilds > Right Click > Properties... > General > Launch Options
+
+<br/><br/>
+ReFramework ONLY Launch Options:<br/><br/>
+<p style="font-family: monospace;">
+WINEDLLOVERRIDES="dinput8.dll=n,b" %command%
+</p><br/><br/>
+
+ReShade ONLY Launch Options:<br/><br/>
+<p style="font-family: monospace;">
+WINEDLLOVERRIDES="d3dcompiler_47=n;dxgi=n,b" %command%
+</p><br/><br/>
+
+ReFramework &amp; ReShade Launch Options:<br/><br/>
+<p style="font-family: monospace;">
+WINEDLLOVERRIDES="dinput8.dll=n,b;d3dcompiler_47=n;dxgi=n,b" %command%
+</p><br/><br/>
+
+ReFramework &amp; ReShade Launch Options with optional parameters:<br/><br/>
+<p style="font-family: monospace;">
+PROTON_HIDE_NVIDIA_GPU=0 PROTON_ENABLE_NVAPI=1 WINEDLLOVERRIDES="dinput8.dll=n,b;d3dcompiler_47=n;dxgi=n,b" %command%
+</p><br/><br/>
+
+</p>
+
+<br/><br/>
+<h1 style="font-family:Helvetica Neue"> Fluffy Mod Manager </h1>
+<br/><br/>
+
+<p class="paragraph1">
+Download Fluffy: <a href="https://www.nexusmods.com/site/mods/818" target="_blank">https://www.nexusmods.com/site/mods/818</a>
+</p>
+
+<br/><br/>
+
+<p class="paragraph1">
+Install Wine:<br/>
+<p style="font-family: monospace;">
+sudo apt install wine
+</p>
+</p>
+
+<br/><br/>
+
+<p class="paragraph1">
+Open a terminal<br/>
+cd into the folder that you have fluffy<br/>
+Run the .exe:<br/>
+<p style="font-family: monospace;">
+sudo wine ModManager.exe
+</p>
+</p>
+
+<!--
+
+ReShade
+
+ -->
+
+<h1 style="font-family:Helvetica Neue"> ReShade </h1>
+
+<br/><br/>
+
+<p class="paragraph1">
+Install the Proton ReShade here: <a href="https://github.com/kevinlekiller/reshade-steam-proton" target="_blank">https://github.com/kevinlekiller/reshade-steam-proton</a>
+<br/><br/>
+Full installation instructions can be found here: 
+<a href="https://guides.martysmods.com/reshade/installing/reshademanualshaderinstall/" target="_blank">https://guides.martysmods.com/reshade/installing/reshademanualshaderinstall/</a>
+
+</p>
+
+<br/><br/>
+
+<p class="paragraph1">
+Once you have ReShade installed, there are 2 more steps. The first is to set up the launch options, which can be found in the ReFramework section.<br/><br/>
+The second is to download any dependencies (ReShade Shaders and Textures). I recommend starting with a preset. Many presets can be found on Nexus, and I also have 
+<a href="https://guitarsluggr.github.io/pages/guitarsluggr-colorful.ini" download>my colorful preset here.</a>
+<br/><br/>
+To download a preset, I dont know the "correct" way... but the way I do it is download the individual fx files from here:<br>
+<a href="https://github.com/Mortalitas/GShade/blob/master/Shaders/Colourfulness.fx" target="_blank">https://github.com/Mortalitas/GShade/blob/master/Shaders/Colourfulness.fx</a>
+<br/><br/>
+Find whatever presets you're missing in the navigation menu on the left, download them, and then place them in the appropriate Shaders or Textures folder in your MH Wilds installation location.<br/><br/>
+My ReShade folder location looks like:<br/>
+/home/guitarsluggr/.steam/debian-installation/steamapps/common/MonsterHunterWilds/ReShade_shaders/Merged
+</p>
+
+<br/><br/>
+
+<!--
+
+ReShade
+
+ -->
+
+<h1 style="font-family:Helvetica Neue"> OBS </h1>
+
+<br/><br/>
+
+
+<p class="paragraph1">
+If you want a Replay-like feature, I went with OBS. After you download it, make sure you set up the bitrate of your recording to an appropriate level of quality.<br/><br/>
+
+Then, once you have it set up, you can follow this guide to do replays with OBS:<br/>
+<a href="https://www.xda-developers.com/how-turned-obs-shadowplay-replacement/" target="_blank">https://www.xda-developers.com/how-turned-obs-shadowplay-replacement/</a>
+</p>
 
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</br></br></br></br></br></br></br></br>
 
 
 

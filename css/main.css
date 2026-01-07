@@ -531,3 +531,9 @@ pre {
   }
 }
 
+.img_bottom {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+}
+

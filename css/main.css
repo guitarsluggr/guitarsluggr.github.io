@@ -532,8 +532,7 @@ pre {
 }
 
 .img_bottom {
-  position: relative;
-  left: 0;
+  position: fixed;
   bottom: 0;
 }
 

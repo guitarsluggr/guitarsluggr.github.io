@@ -58,11 +58,15 @@ Before getting started, you should do some investigating to see which linux dist
 I lightly recommend either Bazzite (if you do not have much experience with Linux or programming in general) or Mint (if you have at least some experience with Linux and programming).
 </p>
 
-<br/>
+<br/><br/>
 
 <h1 style="font-family:Helvetica Neue"> Linux Setup </h1>
 
+<br/><br/>
+
 <p class="paragraph1">
+Here are various links for downloading as well as tutorials for installing.
+
 Download link:<br/>
 <a href="https://www.linuxmint.com/download.php" target="_blank">https://www.linuxmint.com/download.php</a>
 <br/><br/>
@@ -83,7 +87,9 @@ Longer guide:<br/>
 
 </p>
 
-</br>
+<br/><br/>
+<h1 style="font-family:Helvetica Neue"> NVIDIA Driver Install </h1>
+<br/><br/>
 
 <p class="paragraph1">
 The main way to install is through the <u>Driver Manager</u>.
@@ -151,23 +157,23 @@ Steam > MH Wilds > Right Click > Properties... > General > Launch Options
 
 <br/><br/>
 ReFramework ONLY Launch Options:<br/><br/>
-<p style="font-family: monospace;">
-WINEDLLOVERRIDES="dinput8.dll=n,b" %command%
+<p class="paragraph1" style="font-family: monospace;">
+WINEDLLOVERRIDES="dinput8.dll=n,b" &#37;command&#37;
 </p><br/><br/>
 
 ReShade ONLY Launch Options:<br/><br/>
-<p style="font-family: monospace;">
-WINEDLLOVERRIDES="d3dcompiler_47=n;dxgi=n,b" %command%
+<p class="paragraph1" style="font-family: monospace;">
+WINEDLLOVERRIDES="d3dcompiler_47=n;dxgi=n,b" &#37;command&#37;
 </p><br/><br/>
 
 ReFramework &amp; ReShade Launch Options:<br/><br/>
-<p style="font-family: monospace;">
-WINEDLLOVERRIDES="dinput8.dll=n,b;d3dcompiler_47=n;dxgi=n,b" %command%
+<p class="paragraph1" style="font-family: monospace;">
+WINEDLLOVERRIDES="dinput8.dll=n,b;d3dcompiler_47=n;dxgi=n,b" &#37;command&#37;
 </p><br/><br/>
 
 ReFramework &amp; ReShade Launch Options with optional parameters:<br/><br/>
-<p style="font-family: monospace;">
-PROTON_HIDE_NVIDIA_GPU=0 PROTON_ENABLE_NVAPI=1 WINEDLLOVERRIDES="dinput8.dll=n,b;d3dcompiler_47=n;dxgi=n,b" %command%
+<p class="paragraph1" style="font-family: monospace;">
+PROTON_HIDE_NVIDIA_GPU=0 PROTON_ENABLE_NVAPI=1 WINEDLLOVERRIDES="dinput8.dll=n,b;d3dcompiler_47=n;dxgi=n,b" &#37;command&#37;
 </p><br/><br/>
 
 </p>
@@ -184,7 +190,7 @@ Download Fluffy: <a href="https://www.nexusmods.com/site/mods/818" target="_blan
 
 <p class="paragraph1">
 Install Wine:<br/>
-<p style="font-family: monospace;">
+<p class="paragraph1" style="font-family: monospace;">
 sudo apt install wine
 </p>
 </p>
@@ -195,7 +201,7 @@ sudo apt install wine
 Open a terminal<br/>
 cd into the folder that you have fluffy<br/>
 Run the .exe:<br/>
-<p style="font-family: monospace;">
+<p class="paragraph1" style="font-family: monospace;">
 sudo wine ModManager.exe
 </p>
 </p>
